@@ -1,2 +1,2 @@
-# steembuddy-flask
-API Endpoint that filters Steemit.com user's by interest
+# steemflow-flask
+Overview of Transactions FROM and TO steem blockchain
