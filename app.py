@@ -14,21 +14,21 @@ time_constraints = {
 @app.route('/to/<string:toexch>')
 def to_exchange(toexch):
 
-    to_result = list(s.Operations.find({'type': 'transfer', 'to': toexch, 'timestamp': time_constraints},
+    exch = list(s.Operations.find({'type': 'transfer', 'to': toexch, 'timestamp': time_constraints},
         sort=[('timestamp', -1)],
         projection={"_id": 0, "amount.amount": 1, "timestamp": 1, "amount.asset": 1, "from": 1, "to": 1}))
 
-    return jsonify({'to_result': to_result})
+    return jsonify({'exch': exch})
 
 #GET "FROM"  Transfer
 @app.route('/from/<string:fromexch>')
 def from_exchange(fromexch):
 
-    from_result = list(s.Operations.find({'type': 'transfer', 'from': fromexch, 'timestamp': time_constraints},
+    exch = list(s.Operations.find({'type': 'transfer', 'from': fromexch, 'timestamp': time_constraints},
          sort=[('timestamp', -1)],
         projection={"_id": 0, "amount.amount": 1, "timestamp": 1, "amount.asset": 1, "from": 1, "to": 1}))
 
-    return jsonify({'from_result': from_result})
+    return jsonify({'exch': exch})
 
 if __name__ == '__main__':
    app.run(debug=True)

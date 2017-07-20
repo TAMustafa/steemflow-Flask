@@ -2,6 +2,5 @@ steemdata
 flask
 jsonify
 request
-uwsgi
 flask_cors
-
+uwsgi
