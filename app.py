@@ -8,7 +8,7 @@ CORS(app)
 
 s = SteemData()
 time_constraints = {
-    '$gte': dt.datetime.now() - dt.timedelta(days=5)}
+    '$gte': dt.datetime.now() - dt.timedelta(days=30)}
 
 #GET "TO" Transfer
 @app.route('/to/<string:toexch>')
